@@ -1,0 +1,352 @@
+/* RESET & BODY */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background: #0d0f14;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* PARTICLE BACKGROUND */
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 80px;
+  position: sticky;
+  top: 0;
+  background: #0d0f14;
+  z-index: 10;
+}
+.logo {
+  font-size: 22px;
+  font-weight: 600;
+}
+.talk-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    background: #1c1f26;
+    border: 1px solid #4da6ff;
+    color: white;
+    padding: 8px 18px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 14px;
+}
+
+.talk-btn:hover {
+    background: #4da6ff;
+}
+
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #aaa;
+  transition: 0.3s;
+}
+nav a:hover {
+  color: #4da6ff;
+}
+
+/* HERO */
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 80px;
+  gap: 40px;
+}
+.profile-card {
+  background: linear-gradient(145deg, #111318, #0a0c11);
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 40px rgba(77, 166, 255, 0.3);
+  transition: 0.4s;
+}
+.profile-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 60px rgba(77, 166, 255, 0.6);
+}
+.profile-card img {
+  width: 300px;
+  border-radius: 15px;
+}
+.summary-card {
+  max-width: 500px;
+  background: #111318;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(77, 166, 255, 0.2);
+}
+.summary-card h1 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+.summary-card h2 {
+  font-size: 24px;
+  color: #4da6ff;
+  margin-bottom: 15px;
+}
+.summary-card p {
+  font-size: 14px;
+  color: #bbb;
+  line-height: 1.6;
+}
+.location {
+  display: block;
+  margin-top: 15px;
+  font-size: 13px;
+  color: #888;
+}
+
+/* GRID SECTION */
+.grid-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  padding: 60px 80px;
+}
+.card {
+  background: #111318;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(77, 166, 255, 0.15);
+  transition: 0.4s;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 45px rgba(77, 166, 255, 0.4);
+}
+.card h3 {
+  margin-bottom: 15px;
+  color: #4da6ff;
+}
+
+/* PROJECT CARDS */
+.projects {
+  padding: 60px 80px;
+}
+.projects h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 32px;
+  color: #4da6ff;
+}
+.project-card {
+  width: 250px;
+  height: 150px;
+  perspective: 1000px;
+  margin: 20px;
+  display: inline-block;
+}
+.project-card .front,
+.project-card .back {
+  position: absolute;
+  width: 250px;
+  height: 150px;
+  border-radius: 15px;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  box-shadow: 0 0 25px rgba(77, 166, 255, 0.15);
+}
+.project-card .front {
+  background: #111318;
+  color: #4da6ff;
+  font-weight: 600;
+}
+.project-card .back {
+  background: #1c1f26;
+  color: #bbb;
+  transform: rotateY(180deg);
+}
+.project-card:hover .front {
+  transform: rotateY(180deg);
+}
+.project-card:hover .back {
+  transform: rotateY(0);
+}
+
+.projects {
+    padding: 80px;
+    text-align: center;
+}
+
+.projects h2 {
+    margin-bottom: 50px;
+    font-size: 32px;
+    color: #4da6ff;
+}
+
+/* FIXED GRID SYSTEM */
+.project-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;   /* Equal spacing */
+}
+
+/* FLIP CARD */
+.project-card {
+    position: relative;
+    width: 100%;
+    height: 180px;
+    perspective: 1000px;
+}
+
+.project-card .front,
+.project-card .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    box-shadow: 0 0 25px rgba(77,166,255,0.15);
+    transition: 0.6s;
+}
+
+.project-card .front {
+    background: #111318;
+    color: #4da6ff;
+    font-weight: 600;
+}
+
+.project-card .back {
+    background: #1c1f26;
+    color: #bbb;
+    transform: rotateY(180deg);
+}
+
+.project-card:hover .front {
+    transform: rotateY(180deg);
+}
+
+.project-card:hover .back {
+    transform: rotateY(360deg);
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 60px 0;
+}
+footer h2 {
+  font-size: 36px;
+}
+footer span {
+  color: #4da6ff;
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+  }
+  .grid-section {
+    grid-template-columns: 1fr;
+  }
+  .project-card {
+    margin: 20px auto;
+  }
+}
+.contact {
+    padding: 60px 80px;
+    text-align: center;
+}
+
+.contact h2 {
+    margin-bottom: 25px;
+    font-size: 24px;
+    color: #4da6ff;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;  /* vertical center */
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* FINAL CLEAN SMALL BUTTON */
+.contact-container a {
+    display: flex;                /* important for centering */
+    justify-content: center;      /* horizontal center */
+    align-items: center;          /* vertical center */
+    text-decoration: none;
+    color: #ccc;
+    font-size: 13px;
+    padding: 5px 12px;            /* smaller */
+    height: 30px;                 /* fixed height */
+    border: 1px solid #2a2f3a;
+    border-radius: 15px;
+    background: #111318;
+    transition: 0.2s ease;
+}
+
+/* Soft hover */
+.contact-container a:hover {
+    color: #4da6ff;
+    border-color: #4da6ff;
+    background: #151922;
+}
+.contact-footer {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.contact-footer h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.contact-footer span {
+    color: #4da6ff;
+}
+
+.contact-footer p {
+    font-size: 13px;
+    color: #777;
+    margin-top: 15px;
+}
+.contact-container a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #ccc;
+    font-size: 13px;
+    padding: 5px 10px;
+    height: 28px;
+    border: 1px solid #2a2f3a;
+    border-radius: 14px;
+    background: #111318;
+    transition: 0.2s ease;
+}
+
+.contact-container a:hover {
+    color: #4da6ff;
+    border-color: #4da6ff;
+    background: #151922;
+}
