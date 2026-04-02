@@ -1,1 +1,2 @@
 # PraveenPandey-Portfolio
+NEW RESUME ADDED FOR THE NEW ROLES
