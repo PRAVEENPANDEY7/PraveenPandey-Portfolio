@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Praveen Pandey – Backend Developer Resume</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600;700&family=Source+Sans+3:wght@300;400;600;700&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #1a1a1a;
+    --mid: #3d3d3d;
+    --muted: #666;
+    --rule: #c8c0b0;
+    --accent: #1a3a5c;
+    --bg: #ffffff;
+    --gap: 8px;
+  }
+
+  html, body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 10.5pt;
+    line-height: 1.45;
+  }
+
+  /* ── A4 page shell ── */
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto;
+    padding: 14mm 16mm 14mm 16mm;
+    background: #fff;
+  }
+
+  @media print {
+    html, body { background: #fff; }
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0;
+      padding: 14mm 16mm;
+      page-break-after: avoid;
+    }
+    a { color: var(--accent) !important; text-decoration: none; }
+  }
+
+  /* ── Header ── */
+  .header { text-align: center; margin-bottom: 10px; }
+  .header h1 {
+    font-family: 'EB Garamond', serif;
+    font-size: 26pt;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: var(--accent);
+    line-height: 1.1;
+  }
+  .header .tagline {
+    font-size: 9.5pt;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 2px;
+    margin-bottom: 6px;
+  }
+  .contact-line {
+    font-size: 9pt;
+    color: var(--mid);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 4px 14px;
+  }
+  .contact-line a { color: var(--accent); text-decoration: none; }
+  .contact-line a:hover { text-decoration: underline; }
+
+  /* ── Section ── */
+  .section { margin-top: 9px; }
+  .section-title {
+    font-family: 'EB Garamond', serif;
+    font-size: 11.5pt;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border-bottom: 1.5px solid var(--rule);
+    padding-bottom: 2px;
+    margin-bottom: 6px;
+  }
+
+  /* ── Entry block ── */
+  .entry { margin-bottom: 7px; }
+  .entry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 2px;
+  }
+  .entry-title {
+    font-weight: 700;
+    font-size: 10.5pt;
+    color: var(--ink);
+  }
+  .entry-org {
+    font-style: italic;
+    font-size: 10pt;
+    color: var(--mid);
+    margin-top: 0px;
+  }
+  .entry-date {
+    font-size: 9.5pt;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  /* ── Bullets ── */
+  ul.bullets {
+    margin-top: 3px;
+    padding-left: 16px;
+    list-style: disc;
+  }
+  ul.bullets li {
+    font-size: 10pt;
+    color: var(--mid);
+    margin-bottom: 2px;
+    line-height: 1.4;
+  }
+  ul.bullets li strong { color: var(--ink); font-weight: 600; }
+
+  /* ── Tech tags ── */
+  .tech-line {
+    font-size: 9.5pt;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+  .tech-line span {
+    font-weight: 600;
+    color: var(--accent);
+  }
+
+  /* ── Project links ── */
+  .proj-links {
+    font-size: 9pt;
+    margin-top: 1px;
+  }
+  .proj-links a {
+    color: var(--accent);
+    text-decoration: none;
+    margin-right: 10px;
+    font-weight: 600;
+  }
+  .proj-links a:hover { text-decoration: underline; }
+
+  /* ── Skills grid ── */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    row-gap: 4px;
+    column-gap: 10px;
+  }
+  .skill-label {
+    font-weight: 700;
+    font-size: 9.5pt;
+    color: var(--ink);
+    padding-top: 1px;
+  }
+  .skill-value {
+    font-size: 9.5pt;
+    color: var(--mid);
+    line-height: 1.4;
+  }
+  .skill-value strong { color: var(--ink); }
+
+  /* ── Certifications ── */
+  .cert-entry { margin-bottom: 5px; }
+  .cert-title { font-weight: 700; font-size: 10pt; color: var(--ink); }
+  .cert-body { font-size: 9.5pt; color: var(--mid); }
+
+  /* ── Education ── */
+  .edu-entry { margin-bottom: 5px; }
+
+  /* ── Summary ── */
+  .summary-text {
+    font-size: 10pt;
+    color: var(--mid);
+    line-height: 1.5;
+  }
+  .summary-text strong { color: var(--ink); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ═══════════ HEADER ═══════════ -->
+  <div class="header">
+    <h1>PRAVEEN PANDEY</h1>
+    <div class="tagline">Backend Developer &nbsp;|&nbsp; Java &amp; Spring Boot &nbsp;|&nbsp; AI Automation</div>
+    <div class="contact-line">
+      <span>📍 Noida Sector-49, UP</span>
+      <a href="mailto:pravinpandey2006@gmail.com">pravinpandey2006@gmail.com</a>
+      <span>+91 6389104248</span>
+      <a href="https://linkedin.com/in/praveen-pandey" target="_blank">LinkedIn</a>
+      <a href="https://github.com/praveen-pandey" target="_blank">GitHub</a>
+      <a href="#" target="_blank">Portfolio</a>
+    </div>
+  </div>
+
+  <!-- ═══════════ PROFESSIONAL SUMMARY ═══════════ -->
+  <div class="section">
+    <div class="section-title">Professional Summary</div>
+    <p class="summary-text">
+      Results-driven <strong>Final-Year B.Tech CSE student</strong> specialising in <strong>Backend Development and Java Architecture</strong>. Proficient in <strong>Core Java, Spring Boot, Hibernate, Servlets, and MySQL</strong> with hands-on experience building scalable REST APIs and database-driven applications. Familiar with <strong>AI automation tools</strong> including n8n, having built a WhatsApp chatbot agent and worked with Generative AI workflows. Actively seeking a backend or software engineering role to contribute robust server-side solutions.
+    </p>
+  </div>
+
+  <!-- ═══════════ WORK EXPERIENCE ═══════════ -->
+  <div class="section">
+    <div class="section-title">Work Experience</div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <div class="entry-title">Java Full Stack Development Intern</div>
+        <div class="entry-date">Sept 2024 – Feb 2025</div>
+      </div>
+      <div class="entry-org">J/Qspider, Noida</div>
+      <ul class="bullets">
+        <li>Completed intensive training on <strong>Spring Boot, Hibernate, Core Java, and MySQL</strong>, focusing on server-side architecture and scalable API design.</li>
+        <li>Developed and integrated <strong>RESTful backend APIs</strong> with structured database schemas for full-stack web applications.</li>
+        <li>Designed server logic, optimised SQL queries, and implemented endpoints for consumer-facing applications, reducing query response time by improving indexing strategies.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ═══════════ PROJECTS ═══════════ -->
+  <div class="section">
+    <div class="section-title">Projects</div>
+
+    <!-- Project 1 -->
+    <div class="entry">
+      <div class="entry-header">
+        <div class="entry-title">PITM College Management System</div>
+        <div class="entry-date">Jan 2025 – Apr 2025</div>
+      </div>
+      <div class="tech-line"><span>Tech Stack:</span> Java · Spring Boot · Hibernate · MySQL · HTML · CSS · JavaScript</div>
+      <div class="proj-links">
+        <a href="https://github.com/praveen-pandey" target="_blank">⟶ GitHub Repository</a>
+      </div>
+      <ul class="bullets">
+        <li>Built a full-stack college management platform using <strong>Spring Boot MVC</strong> to handle student records, faculty data, attendance, and academic scheduling.</li>
+        <li>Designed a <strong>normalised MySQL schema</strong> with Hibernate ORM for efficient CRUD operations, and exposed RESTful APIs consumed by a dynamic JavaScript front-end.</li>
+        <li>Implemented <strong>role-based access control</strong> (Admin / Faculty / Student) with server-side validation to secure all endpoints.</li>
+      </ul>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="entry">
+      <div class="entry-header">
+        <div class="entry-title">Project 2 – Responsive Landing Pages &amp; WhatsApp AI Automation Agent</div>
+        <div class="entry-date">2024 – 2025</div>
+      </div>
+      <div class="tech-line"><span>Landing Pages:</span> HTML5 · CSS3 · JavaScript · Responsive Design</div>
+      <div class="tech-line"><span>AI Agent:</span> n8n · WhatsApp API · Webhook Automation · Prompt Engineering</div>
+      <div class="proj-links">
+        <a href="https://github.com/praveen-pandey" target="_blank">⟶ GitHub Repository</a>
+      </div>
+      <ul class="bullets">
+        <li>Developed <strong>responsive landing pages</strong> using HTML5, CSS3, and JavaScript with mobile-first layouts, smooth scroll animations, and cross-browser compatibility.</li>
+        <li>Built a <strong>WhatsApp AI agent using n8n</strong> that automatically receives user messages via webhook and replies with relevant answers using connected AI nodes.</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- ═══════════ TECHNICAL SKILLS ═══════════ -->
+  <div class="section">
+    <div class="section-title">Technical Skills</div>
+    <div class="skills-grid">
+      <div class="skill-label">Backend &amp; Java</div>
+      <div class="skill-value">Core Java · Advanced Java (JDBC, Servlets) · Spring Boot · Hibernate ORM · OOP Design Patterns · RESTful API Development</div>
+
+      <div class="skill-label">Databases</div>
+      <div class="skill-value">MySQL · SQL Query Optimisation · Relational Schema Design · Transaction Management · Collection Frameworks</div>
+
+      <div class="skill-label">AI &amp; Automation</div>
+      <div class="skill-value">n8n Workflow Automation · WhatsApp Chatbot Development · Webhook Integration · Prompt Engineering · Generative AI Tools (Replit, Antigravity)</div>
+
+      <div class="skill-label">Frontend &amp; Web</div>
+      <div class="skill-value">HTML5 · CSS3 · JavaScript (ES6+) · Responsive Design · DOM Manipulation</div>
+
+      <div class="skill-label">Tools &amp; DevOps</div>
+      <div class="skill-value">Git · GitHub · Eclipse IDE · VS Code · Postman · Maven (Basic)</div>
+    </div>
+  </div>
+
+  <!-- ═══════════ CERTIFICATIONS ═══════════ -->
+  <div class="section">
+    <div class="section-title">Certifications &amp; Achievements</div>
+
+    <div class="cert-entry">
+      <div class="cert-title">AI Agents Hackathon – Participation Certificate &nbsp;·&nbsp; MNNIT Prayagraj</div>
+      <div class="cert-body">Participated in AI Agents Hackathon; contributed to building "GURUJI AI", a WhatsApp-based chatbot designed to answer student queries using n8n automation workflows.</div>
+    </div>
+
+    <div class="cert-entry">
+      <div class="cert-title">Advanced Management Development Program (MDP) – MNNIT Prayagraj</div>
+      <div class="cert-body">Completed specialised leadership and team management training focused on professional growth and cross-functional collaboration.</div>
+    </div>
+
+    <div class="cert-entry">
+      <div class="cert-title">Mahindra Pride Classroom – Professional Development Certificate</div>
+      <div class="cert-body">Certified training in professional communication, workplace etiquette, and personal effectiveness.</div>
+    </div>
+  </div>
+
+  <!-- ═══════════ EDUCATION ═══════════ -->
+  <div class="section">
+    <div class="section-title">Education</div>
+
+    <div class="entry edu-entry">
+      <div class="entry-header">
+        <div class="entry-title">Bachelor of Technology – Computer Science &amp; Engineering (B.Tech CSE)</div>
+        <div class="entry-date">Aug 2022 – Aug 2026</div>
+      </div>
+      <div class="entry-org">Prayag Institute of Technology &amp; Management / AKTU University &nbsp;·&nbsp; GPA: 7.35 (Ongoing)</div>
+    </div>
+
+    <div class="entry edu-entry">
+      <div class="entry-header">
+        <div class="entry-title">Senior Secondary (12th) &amp; Secondary (10th)</div>
+        <div class="entry-date">2018 – 2021</div>
+      </div>
+      <div class="entry-org">Mangala Prasad Inter College / UP Board &nbsp;·&nbsp; 12th: 82% &nbsp;·&nbsp; 10th: 78%</div>
+    </div>
+  </div>
+
+</div><!-- end .page -->
+</body>
+</html>
