@@ -1,5 +1,5 @@
 // TYPING EFFECT
-const typedText = "Java Developer | UI/UX Designer | Full Stack Developer";
+const typedText = "Software Engineer | Java Backend Developer | Full Stack Developer";
 let i = 0;
 function type() {
     if(i < typedText.length){
@@ -8,7 +8,31 @@ function type() {
         setTimeout(type, 100);
     }
 }
-window.onload = type;
+window.onload = function() {
+    type();
+    initSummaryToggle();
+};
+
+// SUMMARY READ MORE / READ LESS TOGGLE
+function initSummaryToggle() {
+    const summaryEl = document.getElementById("summary-text");
+    const readMoreBtn = document.getElementById("read-more-btn");
+    const summaryCard = document.querySelector(".summary-card");
+    
+    if (summaryEl && readMoreBtn) {
+        readMoreBtn.addEventListener("click", () => {
+            if (summaryEl.classList.contains("collapsed")) {
+                summaryEl.classList.remove("collapsed");
+                if (summaryCard) summaryCard.classList.add("expanded");
+                readMoreBtn.textContent = "Read Less ▴";
+            } else {
+                summaryEl.classList.add("collapsed");
+                if (summaryCard) summaryCard.classList.remove("expanded");
+                readMoreBtn.textContent = "Read More ✨";
+            }
+        });
+    }
+}
 
 // PARTICLES JS
 particlesJS("particles-js", {
@@ -25,3 +49,4 @@ particlesJS("particles-js", {
         "events": {"onhover": {"enable": true, "mode": "grab"}}
     }
 });
+
