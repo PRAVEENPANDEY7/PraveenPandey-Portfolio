@@ -1,5 +1,5 @@
 // TYPING EFFECT
-const typedText = "Software Engineer | Java Backend Developer | Full Stack Developer";
+const typedText = "Software Engineer | Java Backend Developer";
 let i = 0;
 function type() {
     if(i < typedText.length){
