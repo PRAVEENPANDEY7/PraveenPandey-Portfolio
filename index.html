@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow">
     <title>Praveen Pandey | Portfolio</title>
-    <link rel="stylesheet" href="STYLE.CSS">
+    <link rel="stylesheet" href="STYLE.CSS?v=6">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 
@@ -21,19 +21,20 @@
     <!-- PARTICLE BACKGROUND -->
     <div id="particles-js"></div>
 
-    <header>
-        <div class="logo">𝔓𝔯𝔞𝔳𝔢𝔢𝔫𝔭𝔞𝔫𝔡𝔢𝔶</div>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-        </nav>
-
-        <a href="https://wa.me/916389104248?text=Hi%20Praveen%2C%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20connect."
-            target="_blank" class="talk-btn">
-            Let’s Connect
-        </a>
-
+    <header class="nav-pill-wrapper">
+        <div class="nav-pill">
+            <div class="nav-left">
+                <div class="avatar-badge">PP</div>
+                <span class="nav-name">Praveen Pandey</span>
+            </div>
+            <nav class="nav-links">
+                <a href="#about">About</a>
+                <a href="#experience">Work</a>
+                <a href="#skills">Skills</a>
+                <a href="resume.pdf" target="_blank" class="nav-resume-btn">Resume <span class="arrow">↗</span></a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
     </header>
 
     <section class="hero" id="about">
@@ -43,69 +44,157 @@
         </div>
 
         <div class="summary-card">
-            <h1>✦ SELF-SUMMARY ✦</h1>
+            <h1>✨ SELF-SUMMARY ✨</h1>
             <h2>Praveen Pandey</h2>
             <p id="typed-text"></p>
-            <p id="summary-text" class="summary-text collapsed">
-                Software Engineer (B.Tech CS, 2026) with real-world experience shipping production features for enterprise platforms across the full stack. Specializes in backend engineering with Java & Spring Boot and frontend delivery with React.js — bridging both worlds to build clean, scalable, user-facing systems. Has designed REST APIs, relational database architectures, and AI-powered automation workflows that measurably cut delivery time and improve system reliability. Known for fast onboarding, ownership mindset, and the ability to contribute meaningfully from the first sprint. Passionate about building things that work at scale and leveraging AI-first engineering practices to stay ahead of the curve.
-            </p>
+            <div id="summary-text" class="summary-text collapsed">
+                <p>B.Tech Computer Science graduate specializing in building scalable, production-ready web applications across modern backend and frontend ecosystems. Experienced with Java, Spring Boot, Node.js, React.js, SQL, and cloud-native technologies, I design reliable APIs, efficient database architectures, and seamless user experiences.</p>
+                <p>Currently working on backend development with Node.js, building enterprise-level features, REST APIs, and scalable services for BCRIP — focusing on clean architecture, performance optimization, security, and maintainability.</p>
+                <p>I enjoy solving complex engineering challenges through system design, backend optimization, and AI-powered automation workflows. Passionate about distributed systems, scalable architectures, and leveraging modern development practices to build software that creates real-world impact.</p>
+            </div>
             <button id="read-more-btn" class="read-more-btn">Read More ✨</button>
             <span class="location">📍 Noida, UP</span>
         </div>
 
     </section>
 
-    <section class="grid-section">
+    <section class="grid-section" id="experience">
 
         <div class="card">
-            <h3>Experience</h3>
-            <p><strong>Jun 2026 – Present</strong></p>
-            <p><strong>Web Developer Trainee Intern</strong></p>
-            <p><strong>Routa Digital India, Noida, UP</strong></p>
-            <p> · Delivered 5+ production-ready React components — including analytics dashboards, reporting panels, and user management modules — for an enterprise cyber-risk platform, reducing UI build time by 25%.<br>
+            <h3>Work Experience</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <p class="role-dates">Jun 2026 – Present</p>
+                        <p class="role-title">Web Developer Trainee Intern</p>
+                        <p class="role-company">Routa Digital India, Noida, UP</p>
+                        <p class="role-desc"> · Delivered 5+ production-ready React components — including analytics dashboards, reporting panels, and user management modules — for an enterprise cyber-risk platform, reducing UI build time by 25%.<br>
  · Integrated 10+ REST API endpoints across 3 core product modules, enabling real-time data sync between the Node.js/Express backend and React frontend with zero data-loss incidents post-deployment.<br>
  · Contributed to an Agile team of 6 through feature development, defect resolution, and code reviews — improving sprint delivery rate and cutting bug turnaround time by 20%.</p>
-            <br>
-            <p><strong>Sept 2024 – Feb 2025</strong></p>
-            <p><strong>Java Full Stack Development Intern</strong></p>
-            <p><strong>J/Qspider, Noida, UP</strong></p>
-            <p> · Engineered 15+ RESTful API endpoints with Spring Boot and Hibernate for 2 production-grade web applications, achieving 30% faster query response through optimized SQL and indexed schemas.<br>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <p class="role-dates">Sept 2024 – Feb 2025</p>
+                        <p class="role-title">Java Full Stack Development Intern</p>
+                        <p class="role-company">J/Qspider, Noida, UP</p>
+                        <p class="role-desc"> · Engineered 15+ RESTful API endpoints with Spring Boot and Hibernate for 2 production-grade web applications, achieving 30% faster query response through optimized SQL and indexed schemas.<br>
  · Owned end-to-end backend development — from database schema design to business logic implementation — across 3+ relational schemas in MySQL, ensuring data integrity and zero-downtime deployments.</p>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class="card">
+        <div class="card" id="education">
             <h3>Education</h3>
-            <p><strong>Aug 2022 – Aug 2026</strong></p>
-            <p><strong>B.Tech — Computer Science Engineering</strong></p>
-            <p><strong>Prayag Institute of Technology &amp; Management, AKTU University</strong></p>
-            <p>CGPA: 7.74 / 10</p>
-            <br>
-            <p><strong>2018 – 2021</strong></p>
-            <p><strong>Senior Secondary (12th) &amp; Secondary School (10th)</strong></p>
-            <p><strong>Mangala Prasad Inter College / UP Board</strong></p>
-            <p>12th: 82% · 10th: 78%</p>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <p class="edu-dates">Aug 2022 – Aug 2026</p>
+                        <p class="edu-degree">B.Tech — Computer Science Engineering</p>
+                        <p class="edu-school">Prayag Institute of Technology &amp; Management, AKTU University</p>
+                        <p class="edu-grade">CGPA: 7.74 / 10</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <p class="edu-dates">2020 – 2021</p>
+                        <p class="edu-degree">Senior Secondary (12th)</p>
+                        <p class="edu-school">Mangala Prasad Inter College / UP Board</p>
+                        <p class="edu-grade">Score: 82%</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <p class="edu-dates">2018 – 2019</p>
+                        <p class="edu-degree">Secondary School (10th)</p>
+                        <p class="edu-school">Mangala Prasad Inter College / UP Board</p>
+                        <p class="edu-grade">Score: 78%</p>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class="card">
+        <div class="card" id="skills">
             <h3>Skills</h3>
-            <p><b>Languages :</b> Java (Primary) · JavaScript (ES6+) · SQL · TypeScript (Basic)</p>
-            <p><b>Backend :</b> Spring Boot · Spring MVC · Hibernate ORM · Servlets · JDBC · REST APIs · Node.js · Express.js</p>
-            <p><b>Frontend :</b> React.js · HTML5 · CSS3 · Component Architecture · API Integration</p>
-            <p><b>Databases :</b> MySQL · PostgreSQL · MongoDB (Basic)</p>
-            <p><b>DevTools :</b> Git · GitHub · Docker · Redis · Postman · VS Code · Eclipse</p>
-            <p><b>AI &amp; Automation :</b> Claude (Anthropic) · Prompt Engineering · n8n · Generative AI · MCP</p>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <p class="role-title">Languages</p>
+                        <p class="role-desc">Java (Primary) · JavaScript (ES6+) · SQL · TypeScript (Basic)</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <p class="role-title">Backend Engineering</p>
+                        <p class="role-desc">Spring Boot · Spring MVC · Hibernate ORM · Servlets · JDBC · REST APIs · Node.js · Express.js</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <p class="role-title">Frontend Delivery</p>
+                        <p class="role-desc">React.js · HTML5 · CSS3 · Component Architecture · API Integration</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <p class="role-title">Databases &amp; Storage</p>
+                        <p class="role-desc">MySQL · PostgreSQL · MongoDB (Basic)</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <p class="role-title">DevTools &amp; Cloud</p>
+                        <p class="role-desc">Git · GitHub · Docker · Redis · Postman · VS Code · Eclipse</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <p class="role-title">AI &amp; Automation Workflows</p>
+                        <p class="role-desc">Claude (Anthropic) · Prompt Engineering · n8n · Generative AI · MCP</p>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class="card">
+        <div class="card" id="certifications">
             <h3>Certifications &amp; Achievements</h3>
-            <p><b>· Anthropic — 9 Certifications :</b></p>
-            <p>Claude 101 | Claude Code 101 | Claude Code in Action | Claude Platform 101 | Building with the Claude API | Intro to MCP | Claude Cowork | AI Fluency for Educators | AI Fluency Framework</p>
-            <br>
-            <p><b>· Professional — 3 Certifications :</b></p>
-            <p>AI-First Engineering Foundation | Prompt Engineering for IT Teams | Software Testing Concepts</p>
-            <br>
-            <p><b>· Achievements :</b></p>
-            <p>AI Agents Hackathon — MNNIT Prayagraj | Advanced Management Development Program (MDP) — MNNIT Prayagraj | Mahindra Pride Classroom — Professional Communication &amp; Workplace Etiquette</p>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <p class="role-title">Anthropic — 11 Certifications</p>
+                        <p class="role-desc">Claude 101 | Claude Code 101 | Claude Code in Action | Claude Platform 101 | Building with the Claude API | Intro to MCP | Model Context Protocol: Advanced Topics | Certificate of completion: Introduction to subagents | Claude Cowork | AI Fluency for Educators | AI Fluency Framework</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <p class="role-title">Professional — 3 Certifications</p>
+                        <p class="role-desc">AI-First Engineering Foundation | Prompt Engineering for IT Teams | Software Testing Concepts</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <p class="role-title">Key Achievements</p>
+                        <p class="role-desc">AI Agents Hackathon — MNNIT Prayagraj | Advanced Management Development Program (MDP) — MNNIT Prayagraj | Mahindra Pride Classroom — Professional Communication &amp; Workplace Etiquette</p>
+                    </div>
+                </div>
+            </div>
         </div>
 
     </section>
@@ -124,6 +213,7 @@
                     <p> · Built a full-stack records platform handling 1,000+ student entries across 5 modules (enrollment, grades, attendance, reports, admin) — achieving 40% faster data retrieval over raw JDBC via Spring Boot-optimized queries.</p>
                     <p> · Designed a Servlet-based MVC architecture with server-side validation across 10+ endpoints, reducing data integrity errors by 35% and ensuring clean separation of business and data layers.</p>
                     <p><strong>Tech:</strong> Java, Spring Boot, JDBC, Servlets, MySQL</p>
+                    <p style="margin-top: 8px;"><a href="https://github.com/PRAVEENPANDEY7/student-management-system" target="_blank" class="project-link">View GitHub Repository ↗</a></p>
                 </div>
             </div>
 
@@ -135,6 +225,18 @@
                     <p> · Conceptualized and demoed at AI Agents Hackathon, MNNIT Prayagraj — NLP chatbot resolved 50+ query types (admissions, scheduling, academics) with 85%+ intent accuracy, outperforming 3 competing teams.</p>
                     <p> · Engineered 12+ multi-step conversational workflows via prompt engineering and n8n automation, slashing average query resolution time from 10 minutes to under 30 seconds (95% reduction).</p>
                     <p><strong>Tech:</strong> NLP, n8n, Prompt Engineering, Automation</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="front">
+                    <h3>NextGen UI Concepts</h3>
+                </div>
+                <div class="back">
+                    <p> · Designed and deployed an interactive, futuristic NextGen UI showcase with dynamic particle effects, fluid animations, and custom theme switches.</p>
+                    <p> · Implemented advanced CSS backdrop-blur filters, responsive layout structures, and micro-interactions for modern web applications.</p>
+                    <p><strong>Tech:</strong> HTML5, CSS3, Modern UI/UX, NextGen UI, JavaScript</p>
+                    <p style="margin-top: 8px;"><a href="https://glass-port-flex.lovable.app" target="_blank" class="project-link">View Live Concept ↗</a></p>
                 </div>
             </div>
 
@@ -157,6 +259,11 @@
         <!-- Separate Line -->
         <div class="contact-footer">
             <h2>Let's work <span>together.</span></h2>
+            <div class="another-portfolio-wrapper">
+                <a href="https://glass-port-flex.lovable.app" target="_blank" class="another-portfolio-btn">
+                    ✨ Explore NextGen Interactive Portfolio ↗
+                </a>
+            </div>
             <p>© 2026 Praveen Pandey. All Rights Reserved.</p>
         </div>
     </section>

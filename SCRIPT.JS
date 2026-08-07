@@ -1,11 +1,11 @@
 // TYPING EFFECT
-const typedText = "Software Engineer | Java Backend Developer";
+const typedText = "Full-Stack Developer | Backend Engineer";
 let i = 0;
 function type() {
     if(i < typedText.length){
         document.getElementById("typed-text").innerHTML += typedText.charAt(i);
         i++;
-        setTimeout(type, 100);
+        setTimeout(type, 80);
     }
 }
 window.onload = function() {

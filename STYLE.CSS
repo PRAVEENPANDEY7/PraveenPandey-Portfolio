@@ -19,56 +19,97 @@ body {
   z-index: -1;
 }
 
-/* HEADER */
-header {
+/* HEADER PILL CONTAINER */
+.nav-pill-wrapper {
+  position: fixed;
+  top: 24px;
+  left: 0;
+  width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  z-index: 1000;
+  padding: 0 16px;
+  pointer-events: none;
+}
+.nav-pill {
+  pointer-events: auto;
+  display: flex;
+  flex-direction: row;
   align-items: center;
-  padding: 20px 80px;
-  position: sticky;
-  top: 0;
-  background: rgba(13, 15, 20, 0.95);
-  backdrop-filter: blur(10px);
-  z-index: 10;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  justify-content: space-between;
+  gap: 48px;
+  background: rgba(22, 27, 38, 0.9);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 9999px;
+  padding: 8px 28px 8px 10px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.65), 0 0 20px rgba(77, 166, 255, 0.12), inset 0 1px 1px rgba(255, 255, 255, 0.2);
+  width: fit-content;
+  max-width: 95vw;
+  transition: all 0.3s ease;
 }
-.logo {
-  font-size: 22px;
-  font-weight: 600;
-  color: #fff;
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
-.talk-btn {
-  display: inline-flex;
+.avatar-badge {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  display: flex;
   align-items: center;
   justify-content: center;
-  text-decoration: none;
-  background: #1c1f26;
-  border: 1px solid #4da6ff;
-  color: white;
-  padding: 8px 22px;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: 0.3s;
   font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.5px;
+  flex-shrink: 0;
 }
-.talk-btn:hover {
-  background: #4da6ff;
-  box-shadow: 0 0 15px rgba(77, 166, 255, 0.4);
+.nav-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  white-space: nowrap;
 }
-
-nav {
+.nav-links {
   display: flex;
+  flex-direction: row;
   align-items: center;
+  gap: 26px;
 }
-nav a {
-  margin: 0 18px;
-  text-decoration: none;
-  color: #aaa;
-  transition: 0.3s;
+.nav-links a {
+  color: #a0aab8;
   font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  white-space: nowrap;
 }
-nav a:hover {
-  color: #4da6ff;
+.nav-links a:hover {
+  color: #ffffff;
+}
+.nav-resume-btn {
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 6px 18px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14.5px !important;
+}
+.nav-resume-btn:hover {
+  background: #4da6ff !important;
+  color: #0d0f14 !important;
+  border-color: #4da6ff !important;
+}
+.nav-resume-btn .arrow {
+  font-size: 13px;
 }
 
 /* HERO (IMAGE BOX & SELF SUMMARY) */
@@ -76,7 +117,7 @@ nav a:hover {
   display: flex;
   justify-content: center;
   align-items: stretch;
-  padding: 60px 80px;
+  padding: 120px 80px 60px;
   gap: 40px;
   max-width: 1400px;
   margin: 0 auto;
@@ -89,7 +130,7 @@ nav a:hover {
   border-radius: 24px;
   box-shadow: 0 0 40px rgba(77, 166, 255, 0.25);
   transition: 0.4s ease;
-  height: 440px;
+  height: 480px;
   width: 440px;
   display: flex;
   align-items: center;
@@ -106,13 +147,13 @@ nav a:hover {
   width: 100%;
   height: 100%;
   max-width: 400px;
-  max-height: 400px;
+  max-height: 440px;
   object-fit: cover;
   border-radius: 18px;
   display: block;
 }
 
-/* SELF-SUMMARY CARD - ENLARGED */
+/* SELF-SUMMARY CARD */
 .summary-card {
   flex: 1;
   max-width: 750px;
@@ -122,30 +163,31 @@ nav a:hover {
   border-radius: 24px;
   box-shadow: 0 0 35px rgba(77, 166, 255, 0.2);
   transition: all 0.4s ease;
-  height: 440px;
+  height: 480px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   border: 1px solid rgba(77, 166, 255, 0.15);
+  overflow: hidden;
 }
 .summary-card.expanded {
   height: auto;
-  min-height: 440px;
+  min-height: 480px;
 }
 .summary-card:hover {
   box-shadow: 0 0 50px rgba(77, 166, 255, 0.35);
   border-color: rgba(77, 166, 255, 0.3);
 }
 .summary-card h1 {
-  font-size: 24px;
-  margin-bottom: 6px;
+  font-size: 20px;
+  margin-bottom: 4px;
   color: #fff;
   letter-spacing: 1.5px;
 }
 .summary-card h2 {
   font-size: 28px;
   color: #4da6ff;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
   font-weight: 700;
 }
 .summary-card p#typed-text {
@@ -153,17 +195,23 @@ nav a:hover {
   font-weight: 600;
   color: #88c4ff;
   min-height: 24px;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
 }
 .summary-text {
-  font-size: 15px;
+  font-size: 14.5px;
   color: #ccc;
-  line-height: 1.7;
+  line-height: 1.65;
   transition: all 0.3s ease;
+}
+.summary-text p {
+  margin-bottom: 10px;
+}
+.summary-text p:last-child {
+  margin-bottom: 0;
 }
 .summary-text.collapsed {
   display: -webkit-box;
-  -webkit-line-clamp: 4;
+  -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -174,7 +222,7 @@ nav a:hover {
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
-  margin-top: 12px;
+  margin-top: 10px;
   padding: 0;
   display: inline-block;
   align-self: flex-start;
@@ -186,7 +234,7 @@ nav a:hover {
 }
 .location {
   display: block;
-  margin-top: 18px;
+  margin-top: 14px;
   font-size: 14px;
   color: #888;
 }
@@ -200,6 +248,7 @@ nav a:hover {
   align-items: stretch;
   max-width: 1400px;
   margin: 0 auto;
+  scroll-margin-top: 100px;
 }
 .card {
   background: #111318;
@@ -211,6 +260,7 @@ nav a:hover {
   flex-direction: column;
   height: 100%;
   border: 1px solid rgba(77, 166, 255, 0.1);
+  scroll-margin-top: 100px;
 }
 .card:hover {
   transform: translateY(-5px);
@@ -218,16 +268,87 @@ nav a:hover {
   border-color: rgba(77, 166, 255, 0.3);
 }
 .card h3 {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   color: #4da6ff;
   font-size: 20px;
-  padding-bottom: 4px;
+  border-bottom: 1px solid rgba(77, 166, 255, 0.15);
+  padding-bottom: 10px;
 }
 .card p {
   font-size: 14px;
   color: #bbb;
   line-height: 1.6;
   margin-bottom: 8px;
+}
+
+/* VERTICAL TIMELINE STYLING (EXPERIENCE, EDUCATION, SKILLS, CERTIFICATIONS) */
+.timeline {
+  position: relative;
+  padding-left: 24px;
+  margin-top: 10px;
+}
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 10px;
+  bottom: 10px;
+  width: 2px;
+  background: linear-gradient(180deg, #4da6ff 0%, rgba(77, 166, 255, 0.25) 100%);
+  border-radius: 2px;
+}
+.timeline-item {
+  position: relative;
+  margin-bottom: 22px;
+}
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+.timeline-dot {
+  position: absolute;
+  left: -26px;
+  top: 4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #4da6ff;
+  border: 2px solid #111318;
+  box-shadow: 0 0 10px rgba(77, 166, 255, 0.8);
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+.timeline-item:hover .timeline-dot {
+  background: #ffffff;
+  border-color: #4da6ff;
+  box-shadow: 0 0 16px rgba(77, 166, 255, 1);
+  transform: scale(1.3);
+}
+.timeline-content {
+  padding-bottom: 4px;
+}
+.edu-dates, .role-dates {
+  color: #4da6ff;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 3px !important;
+}
+.edu-degree, .role-title {
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 3px !important;
+}
+.edu-school, .role-company {
+  color: #bbb;
+  font-size: 13.5px;
+  margin-bottom: 3px !important;
+}
+.edu-grade, .role-desc {
+  color: #cccccc;
+  font-size: 13.5px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-bottom: 0 !important;
 }
 
 /* PROJECT SECTION */
@@ -304,6 +425,18 @@ nav a:hover {
   transform: rotateY(360deg);
 }
 
+.project-link {
+  display: inline-block;
+  color: #4da6ff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+.project-link:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
 /* CONTACT SECTION */
 .contact {
   padding: 60px 80px;
@@ -354,6 +487,30 @@ nav a:hover {
 .contact-footer span {
   color: #4da6ff;
 }
+.another-portfolio-wrapper {
+  margin: 22px 0 16px;
+}
+.another-portfolio-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, rgba(77, 166, 255, 0.15), rgba(77, 166, 255, 0.05));
+  border: 1px solid rgba(77, 166, 255, 0.4);
+  color: #4da6ff;
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(77, 166, 255, 0.15);
+}
+.another-portfolio-btn:hover {
+  background: #4da6ff;
+  color: #0d0f14;
+  box-shadow: 0 0 25px rgba(77, 166, 255, 0.5);
+  transform: translateY(-3px);
+}
 .contact-footer p {
   font-size: 13px;
   color: #777;
@@ -363,39 +520,37 @@ nav a:hover {
 /* RESPONSIVE MEDIA QUERIES */
 @media screen and (max-width: 1200px) {
   .hero {
-    padding: 50px 40px;
+    padding: 100px 40px 50px;
     gap: 30px;
   }
   .profile-card {
     width: 380px;
-    height: 380px;
+    height: 420px;
   }
   .summary-card {
-    height: 380px;
+    height: 420px;
     padding: 30px;
   }
   .summary-card.expanded {
     height: auto;
-    min-height: 380px;
+    min-height: 420px;
   }
 }
 
 @media screen and (max-width: 950px) {
-  header {
-    flex-direction: column;
+  .nav-pill {
+    padding: 8px 16px;
     gap: 15px;
-    padding: 15px 20px;
   }
-  nav {
-    flex-wrap: wrap;
-    justify-content: center;
+  .nav-links {
+    gap: 12px;
   }
-  nav a {
-    margin: 5px 10px;
+  .nav-links a {
+    font-size: 13px;
   }
   .hero {
     flex-direction: column;
-    padding: 30px 20px;
+    padding: 90px 20px 30px;
     align-items: center;
   }
   .profile-card {
@@ -404,6 +559,7 @@ nav a:hover {
   }
   .summary-card {
     max-width: 100%;
+    height: auto;
     min-height: auto;
     padding: 25px;
   }
@@ -426,21 +582,31 @@ nav a:hover {
   }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 600px) {
+  .nav-pill-wrapper {
+    top: 12px;
+    padding: 0 10px;
+  }
+  .nav-pill {
+    padding: 5px 12px 5px 6px;
+    gap: 12px;
+  }
+  .nav-name {
+    display: none;
+  }
+  .nav-links {
+    gap: 10px;
+  }
+  .nav-links a {
+    font-size: 12px;
+  }
   .profile-card {
     width: 280px;
     height: 280px;
     padding: 15px;
   }
-  .logo {
-    font-size: 20px;
-  }
-  .talk-btn {
-    padding: 6px 14px;
-    font-size: 13px;
-  }
   .summary-card h1 {
-    font-size: 20px;
+    font-size: 18px;
   }
   .summary-card h2 {
     font-size: 22px;
