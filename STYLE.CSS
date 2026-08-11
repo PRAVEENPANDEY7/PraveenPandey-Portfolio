@@ -124,26 +124,27 @@ body {
   margin: 0 auto;
 }
 
-/* PROFILE IMAGE CARD - ENLARGED */
-.profile-card {
+/* EQUAL SYMMETRICAL CARDS IN HERO */
+.profile-card,
+.summary-card {
+  flex: 1 1 0px;
+  width: 50%;
   background: linear-gradient(145deg, #111318, #0a0c11);
-  padding: 18px;
   border-radius: 24px;
-  box-shadow: 0 0 40px rgba(77, 166, 255, 0.25);
-  transition: 0.4s ease;
+  box-shadow: 0 0 35px rgba(77, 166, 255, 0.2);
+  border: 1px solid rgba(77, 166, 255, 0.18);
+  transition: all 0.4s ease;
   height: 460px;
-  width: 380px;
+  overflow: hidden;
+}
+
+.profile-card {
+  padding: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
-  border: 1px solid rgba(77, 166, 255, 0.15);
 }
-.profile-card:hover {
-  transform: translateY(-4px) scale(1.02);
-  box-shadow: 0 0 60px rgba(77, 166, 255, 0.45);
-  border-color: rgba(77, 166, 255, 0.4);
-}
+
 .profile-card img {
   width: 100%;
   height: 100%;
@@ -154,30 +155,23 @@ body {
   display: block;
 }
 
-/* SELF-SUMMARY CARD */
 .summary-card {
-  flex: 1;
-  max-width: 780px;
-  width: 100%;
-  background: #111318;
   padding: 32px 36px;
-  border-radius: 24px;
-  box-shadow: 0 0 35px rgba(77, 166, 255, 0.2);
-  transition: all 0.4s ease;
-  height: 460px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border: 1px solid rgba(77, 166, 255, 0.15);
-  overflow: hidden;
 }
+
+.profile-card:hover,
+.summary-card:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 0 55px rgba(77, 166, 255, 0.4);
+  border-color: rgba(77, 166, 255, 0.4);
+}
+
 .summary-card.expanded {
   height: auto;
   min-height: 460px;
-}
-.summary-card:hover {
-  box-shadow: 0 0 50px rgba(77, 166, 255, 0.35);
-  border-color: rgba(77, 166, 255, 0.3);
 }
 .summary-card h1 {
   font-size: 20px;
@@ -525,20 +519,19 @@ body {
 /* RESPONSIVE MEDIA QUERIES */
 @media screen and (max-width: 1200px) {
   .hero {
-    padding: 100px 40px 50px;
-    gap: 30px;
+    padding: 100px 32px 50px;
+    gap: 24px;
   }
-  .profile-card {
-    width: 380px;
-    height: 420px;
+  .profile-card,
+  .summary-card {
+    height: 440px;
   }
   .summary-card {
-    height: 420px;
-    padding: 30px;
+    padding: 28px;
   }
   .summary-card.expanded {
     height: auto;
-    min-height: 420px;
+    min-height: 440px;
   }
 }
 
@@ -558,9 +551,14 @@ body {
     padding: 90px 20px 30px;
     align-items: center;
   }
+  .profile-card,
+  .summary-card {
+    width: 100%;
+    flex: none;
+  }
   .profile-card {
-    width: 340px;
-    height: 340px;
+    max-width: 450px;
+    height: 380px;
   }
   .summary-card {
     max-width: 100%;
